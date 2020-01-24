@@ -3,11 +3,11 @@ from World import World
 import numpy as np
 
 N_ITE = 20
-N_ANTS = 4
+N_ANTS = 12
 ALPHA = 1
 BETA = 1
 RO = 0.5
-DISTANCES_PATH = 'distances/sh07_dist.txt'
+DISTANCES_PATH = 'distances/uk12_dist.txt'
 
 
 def get_arguments():

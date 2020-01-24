@@ -1,13 +1,17 @@
 import numpy as np
 
 
-class Fourmis:
+class Ant:
 
     def __init__(self, distances, visibility, pheromones, alpha, beta):
         self.distances = distances
         self.visibility = visibility
         self.start_pos = 0
-        self.init_states()
+        self.location = self.start_pos
+        self.visited = [self.location]
+        self.unvisited = self.unvisited = [i for i in range(self.distances.shape[0]) if self.location != i]
+        self.path = []
+        self.len_path = 0.0
         self.pheromones = pheromones
         self.pheromones[self.location] = 1e-1
         self.alpha = alpha
