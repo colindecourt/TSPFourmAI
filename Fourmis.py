@@ -1,10 +1,9 @@
 import numpy as np
-import copy
-import random
+
 
 class Fourmis:
 
-    def __init__(self, distances, visibility, pheromones, alpha = 1, beta = 1):
+    def __init__(self, distances, visibility, pheromones, alpha, beta):
         self.distances = distances
         self.visibility = visibility
         self.start_pos = 0
@@ -48,10 +47,12 @@ class Fourmis:
         best_prob = 0
         for j in self.unvisited:
             gamma = np.random.uniform(0, 1)
-            num_p =  gamma + self.pheromones[self.location, j]**self.alpha * self.visibility[self.location, j]**self.beta
+            num_p = gamma + self.pheromones[self.location, j]**self.alpha * self.visibility[self.location, j]**self.beta
             den_p = np.sum([gamma + self.pheromones[self.location, i]**self.alpha * self.visibility[self.location, i]**self.beta for i in self.unvisited])
             p = num_p/den_p
             if p > best_prob:
+                best_prob = p
                 best_move = (self.location, j)
         return best_move
+
 
