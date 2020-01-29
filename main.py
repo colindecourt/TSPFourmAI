@@ -7,7 +7,7 @@ N_ANTS = 12
 ALPHA = 1
 BETA = 1
 RO = 0.5
-DISTANCES_PATH = 'distances/uk12_dist.txt'
+DISTANCES_PATH = 'distances/lau15_dist.txt'
 
 
 def get_arguments():

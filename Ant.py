@@ -6,7 +6,7 @@ class Ant:
     def __init__(self, distances, visibility, pheromones, alpha, beta):
         self.distances = distances
         self.visibility = visibility
-        self.start_pos = 0
+        self.start_pos = np.random.randint(0, self.distances.shape[0])
         self.location = self.start_pos
         self.visited = [self.location]
         self.unvisited = self.unvisited = [i for i in range(self.distances.shape[0]) if self.location != i]
